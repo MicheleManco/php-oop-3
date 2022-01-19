@@ -51,7 +51,7 @@ class Computer{
     }
 
     public function setPrezzo($prezzo){
-        if($prezzo < 0 ||  $prezzo > 2000)
+        if(!is_int($prezzo) || $prezzo < 0 ||  $prezzo > 2000)
             throw new Exception("prezzo non accettato");
         $this->prezzo = $prezzo;
     }
